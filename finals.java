@@ -21,7 +21,7 @@ public class finals {
         // Display the full list and results in a showMessageDialog.
 
 
-        
+
 
         // Create array to store total expenses for each day (5 days)
         double[] expenses = new double[5];
@@ -40,6 +40,10 @@ public class finals {
                 try {
                     // Ask user how many times they spent money on this day
                     String input = JOptionPane.showInputDialog(null, "How many times did you spend money on " + days[i] + "?", "Number of Transactions", JOptionPane.QUESTION_MESSAGE);
+                    // If user clicked Cancel or X, end the program
+                    if (input == null) {
+                        return;
+                    }
                     numTransactions = Integer.parseInt(input);
                     // Check if number is negative
                     if (numTransactions < 0) {
@@ -62,6 +66,10 @@ public class finals {
                     try {
                         // Ask for amount of each spending
                         String input = JOptionPane.showInputDialog(null, "Enter spending amount #" + (j+1) + " for " + days[i] + ":", "Expense Amount", JOptionPane.QUESTION_MESSAGE);
+                        // If user clicked Cancel or X, end the program
+                        if (input == null) {
+                            return;
+                        }
                         double amount = Double.parseDouble(input);
                         // Check if amount is negative
                         if (amount < 0) {
